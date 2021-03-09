@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>4FAAFF9B-DE45-4416-87C0-7EAEFC22F208</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>4FAAFF9B-DE45-4416-87C0-7EAEFC22F208.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>BudgetKeeper project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>BudgetKeeper</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Testing project BudgetKeeper with scheme BudgetKeeper</string>
+			<key>timeStartedRecording</key>
+			<real>637016638.93891203</real>
+			<key>timeStoppedRecording</key>
+			<real>637016640.02435303</real>
+			<key>title</key>
+			<string>Testing project BudgetKeeper with scheme BudgetKeeper</string>
+			<key>uniqueIdentifier</key>
+			<string>4FAAFF9B-DE45-4416-87C0-7EAEFC22F208</string>
+		</dict>
+		<key>80E17FAF-D9FB-4A84-B00A-7F0821768A92</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>80E17FAF-D9FB-4A84-B00A-7F0821768A92.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>BudgetKeeper project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>BudgetKeeper</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Testing project BudgetKeeper with scheme BudgetKeeper</string>
+			<key>timeStartedRecording</key>
+			<real>637016838.24703896</real>
+			<key>timeStoppedRecording</key>
+			<real>637016839.351408</real>
+			<key>title</key>
+			<string>Testing project BudgetKeeper with scheme BudgetKeeper</string>
+			<key>uniqueIdentifier</key>
+			<string>80E17FAF-D9FB-4A84-B00A-7F0821768A92</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

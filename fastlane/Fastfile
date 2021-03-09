@@ -1,0 +1,68 @@
+lane :aws_device_run_ios do
+  ENV['AWS_ACCESS_KEY_ID']     = 'AKIASRKAFF5JZLUH54ER'
+  ENV['AWS_SECRET_ACCESS_KEY'] = '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'
+  ENV['AWS_REGION']            = 'us-west-2'
+  ENV['FL_AWS_DEVICE_FARM_NAME'] = 'budgetKeeper'
+  ENV['FL_AWS_DEVICE_FARM_NETWORK_PROFILE_ARN'] = 'arn:aws:devicefarm:us-west-2::networkprofile:publicDisabled'
+  ENV['FL_AWS_DEVICE_FARM_TEST_PACKAGE_TYPE'] = 'XCTEST_UI_TEST_PACKAGE'
+  ENV['FL_AWS_DEVICE_FARM_TEST_TYPE'] = 'XCTEST_UI'
+  #Build For Testing
+  xcodebuild(
+    scheme: 'BudgetKeeper',
+    destination: 'generic/platform=iOS',
+    configuration: 'Release',
+    derivedDataPath: 'aws',
+    xcargs: "GCC_PREPROCESSOR_DEFINITIONS='AWS_UI_TEST' ENABLE_BITCODE=NO CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO build-for-testing"
+  )
+  # Transform .app into AWS compatible IPA
+  aws_device_farm_package(
+    derrived_data_path: "aws",
+    configuration: "Release"
+  )
+
+  aws_device_farm(
+        name: 'budgetKeeper',
+        binary_path: 'aws/packages/app.ipa',
+        test_binary_path: 'aws/packages/runner.ipa',
+        device_pool: 'budgetTest',
+        wait_for_completion: true,
+        #network_profile_arn: 'aws:devicefarm:us-west-2:174617603923:project:5849ac32-d52a-44b8-be8d-a390f6ee6dc3'
+  )
+  # RUN tests on AWS Device Farmclears
+  # aws_device_farm
+end
+
+# lane :aws do
+#   xcodebuild(
+#     clean: true,
+#     workspace: 'FiveXFive.xcworkspace',
+#     scheme: 'UITests',
+#     destination: 'generic/platform=iOS',
+#     configuration: 'Development',
+#     derivedDataPath: 'aws',
+#     xcargs: "GCC_PREPROCESSOR_DEFINITIONS='AWS_UI_TEST' ENABLE_BITCODE=NO build-for-testing"
+#   )
+
+#   FileUtils.rm_rf '../aws/packages'
+#   Dir['../aws/Build/Intermediates/CodeCoverage/Products/Development-iphoneos/*.app'].each do |app|
+#   if app.include? 'Runner'
+#   FileUtils.mkdir_p '../aws/packages/runner/Payload'
+#   FileUtils.cp_r app, '../aws/packages/runner/Payload'
+#     `cd ../aws/packages/runner/; zip -r ../runner.ipa .; cd -`
+#   else
+#     FileUtils.mkdir_p '../aws/packages/app/Payload'
+#     FileUtils.cp_r app, '../aws/packages/app/Payload'
+#     `cd ../aws/packages/app/; zip -r ../app.ipa .; cd -`
+#   end
+#   end
+#   ENV['AWS_ACCESS_KEY_ID']     = 'AKIASRKAFF5JZLUH54ER'
+#   ENV['AWS_SECRET_ACCESS_KEY'] = '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'
+#   ENV['AWS_REGION']            = 'us-west-2'
+#   aws_device_farm(
+#     name: 'budgetKeeper',
+#     binary_path: 'aws/packages/app.ipa',
+#     test_binary_path: 'aws/packages/runner.ipa',
+#     device_pool: 'IOS',
+#     wait_for_completion: true
+#   )
+# end
