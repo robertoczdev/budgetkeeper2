@@ -27,7 +27,7 @@ class AccountsViewUITest: XCTestCase {
   
   
 
-  /*func testDeleteAccount() {
+  func testDeleteAccount() {
     app.buttons["add_account"].tap()
     app.textFields.firstMatch.tap()
     app.textFields.firstMatch.typeText("Savings")
@@ -40,7 +40,7 @@ class AccountsViewUITest: XCTestCase {
     XCTAssertEqual(app.cells.count, 0)
   }
 
-  
+  /*
   func testUpdateBalance() {
     app.buttons["add_account"].tap()
     app.textFields.firstMatch.tap()
@@ -90,8 +90,9 @@ class AccountsViewUITest: XCTestCase {
     // XCTAssertEqual(app.cells.buttons.firstMatch.label, "Saving:\(currency)7620\(separator)00")
     // XCTAssertEqual(app.cells.element(boundBy: 1).buttons.firstMatch.label, "Salary:\(currency)5455\(separator)00")
   }
+ */
 }
-*/
+
 func localizedString(_ key: String) -> String {
   let result = NSLocalizedString(key, bundle: Bundle(for: AccountsViewUITest.self), comment: "")
   return result
