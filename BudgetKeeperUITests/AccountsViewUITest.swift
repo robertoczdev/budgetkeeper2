@@ -23,6 +23,9 @@ class AccountsViewUITest: XCTestCase {
     // since the cell content is wrapped into the navigation link, the element type is 'button'
     XCTAssertEqual(app.cells.buttons.firstMatch.label, "Savings\n\(currency)0\(separator)00")
   }
+  
+  
+  
 
   /*func testDeleteAccount() {
     app.buttons["add_account"].tap()
